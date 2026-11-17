@@ -10,7 +10,7 @@
     {
         "id": "28bc7da10647304e",
         "type": "ui-base",
-        "name": "My Dashboard",
+        "name": "SALARIS - Smart Lamp Ritme Sirkadian",
         "path": "/dashboard",
         "appIcon": "",
         "includeClientData": true,
@@ -47,34 +47,103 @@
         }
     },
     {
+        "id": "f203777e4233d27b",
+        "type": "ui-theme",
+        "name": "Theme Name",
+        "colors": {
+            "surface": "#fcfcfd",
+            "primary": "#0d74ce",
+            "bgPage": "#f9f9fb",
+            "groupBg": "#ffffff",
+            "groupOutline": "#d9d9e0"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "723c86197d3ee2eb",
+        "type": "ui-theme",
+        "name": "Theme Name",
+        "colors": {
+            "surface": "#fcfcfd",
+            "primary": "#0d74ce",
+            "bgPage": "#f9f9fb",
+            "groupBg": "#ffffff",
+            "groupOutline": "#d9d9e0"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "f9c19246ab0a9d28",
+        "type": "mqtt-broker",
+        "name": "Mosquitto Web",
+        "broker": "test.mosquitto.org",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
         "id": "da8dcfee354cebb4",
         "type": "ui-page",
-        "name": "Page 1",
+        "name": "SALARIS",
         "ui": "28bc7da10647304e",
         "path": "/page1",
         "icon": "home",
         "layout": "grid",
-        "theme": "30ceb3fb589e6d6d",
+        "theme": "723c86197d3ee2eb",
         "breakpoints": [
             {
                 "name": "Default",
-                "px": 0,
-                "cols": 3
+                "px": "0",
+                "cols": "3"
             },
             {
                 "name": "Tablet",
-                "px": 576,
-                "cols": 6
+                "px": "576",
+                "cols": "6"
             },
             {
                 "name": "Small Desktop",
-                "px": 768,
-                "cols": 9
+                "px": "768",
+                "cols": "9"
             },
             {
                 "name": "Desktop",
-                "px": 1024,
-                "cols": 12
+                "px": "1024",
+                "cols": "12"
             }
         ],
         "tabs": [],
@@ -88,13 +157,13 @@
         "type": "ui-group",
         "name": "Group 1",
         "page": "da8dcfee354cebb4",
-        "width": 6,
-        "height": 1,
+        "width": "12",
+        "height": "4",
         "order": 1,
         "showTitle": true,
         "className": "",
-        "visible": true,
-        "disabled": false,
+        "visible": "true",
+        "disabled": "false",
         "groupType": "default",
         "keepLoaded": false,
         "tab": ""
@@ -106,7 +175,7 @@
         "name": "",
         "label": "switch",
         "group": "14059a405382876e",
-        "order": 1,
+        "order": 2,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -117,18 +186,134 @@
         "className": "",
         "layout": "row-spread",
         "clickableArea": "switch",
-        "onvalue": true,
+        "onvalue": "true",
         "onvalueType": "bool",
         "onicon": "",
         "oncolor": "",
-        "offvalue": false,
+        "offvalue": "false",
         "offvalueType": "bool",
         "officon": "",
         "offcolor": "",
-        "x": 270,
+        "x": 390,
+        "y": 40,
+        "wires": [
+            [
+                "4cab21191b183793"
+            ]
+        ]
+    },
+    {
+        "id": "0801362fa3d5d573",
+        "type": "ui-slider",
+        "z": "2375b97b3dfbb132",
+        "group": "14059a405382876e",
+        "name": "",
+        "label": "slider",
+        "tooltip": "",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "thumbLabel": "true",
+        "showTicks": "false",
+        "min": 0,
+        "max": "100",
+        "step": 1,
+        "className": "",
+        "iconPrepend": "",
+        "iconAppend": "",
+        "color": "",
+        "colorTrack": "",
+        "colorThumb": "",
+        "showTextField": false,
+        "x": 390,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5ffd97c7938cd5a7",
+        "type": "ui-button-group",
+        "z": "2375b97b3dfbb132",
+        "name": "",
+        "group": "14059a405382876e",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "label": "",
+        "className": "",
+        "rounded": false,
+        "useThemeColors": true,
+        "passthru": false,
+        "options": [
+            {
+                "label": "Otomatis",
+                "icon": "",
+                "value": "otomatis",
+                "valueType": "str",
+                "color": "#009933"
+            },
+            {
+                "label": "Manual",
+                "icon": "",
+                "value": "manual",
+                "valueType": "str",
+                "color": "#999999"
+            }
+        ],
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 390,
         "y": 160,
         "wires": [
             []
         ]
+    },
+    {
+        "id": "ab3f827d85af7dc7",
+        "type": "ui-template",
+        "z": "2375b97b3dfbb132",
+        "group": "",
+        "page": "",
+        "ui": "28bc7da10647304e",
+        "name": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "/* Membuat wadah button group melebar penuh */\n.nrdb-ui-button-group .v-input__control,\n.nrdb-ui-button-group .v-btn-toggle {\n    width: 100% !important;\n    display: flex !important;\n}\n\n/* Membagi lebar tombol Otomatis dan Manual sama rata (50% : 50%) */\n.nrdb-ui-button-group .v-btn-toggle .v-btn {\n    flex: 1 1 50% !important;\n    max-width: 50% !important;\n}",
+        "noerr": 0,
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "site:style",
+        "className": "",
+        "x": 360,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4cab21191b183793",
+        "type": "mqtt out",
+        "z": "2375b97b3dfbb132",
+        "name": "",
+        "topic": "SALARIS_PBLIF3-PC01",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "",
+        "x": 610,
+        "y": 40,
+        "wires": []
     }
 ]
